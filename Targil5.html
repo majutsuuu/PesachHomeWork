@@ -8,18 +8,43 @@
 </head>
 <body>
 <script>
-
-function Car(Make, Model, Year,Owner,Hand) {
-  this.Make = Make;
+const myCar ={
+     Manufacturer : 'Mercedes',
+     Model : 'G-wagon',
+     Year : 2021,
+     Owner : 'Elon Musk',
+     Hand : 2,
+     print: function(){
+         let table= '<table><tr><th>Manufacturer</th><th>Model</th><th>Year</th><th>Owner</th><th>Hand</th></tr>';
+         table += '<tr><td>' + this.Manufacturer + '</td><td>' + this.Model + '</td><td>' + this.Year + '</td><td>'+ this.Owner + '</td><td>' + this.Hand + '</td></tr>';
+         table += '</table>';
+         document.write(table);
+     },
+     changeOwner: function(newOwner){
+         this.Owner = newOwner;
+         this.Hand += 1;
+     }
+};
+function Car(Manufacturer,Model,Year,Owner,Hand){
+  this.Manufacturer = Manufacturer;
   this.Model = Model;
   this.Year = Year;
   this.Owner = Owner;
   this.Hand = Hand;
+    this.print= function(){
+         let table= '<table><tr><th>Manufacturer</th><th>Model</th><th>Year</th><th>Owner</th><th>Hand</th></tr>';
+         table += '<tr><td>' + this.Manufacturer + '</td><td>' + this.Model + '</td><td>' + this.Year + '</td><td>'+ this.Owner + '</td><td>' + this.Hand + '</td></tr>';
+         table += '</table>';
+         document.write(table);
+     };
+     this.changeOwner= function(newOwner){
+         this.Owner = newOwner;
+         this.Hand += 1;
+     };
 }
 
-const car2 = new Car('Suzuki', 'Baleno', 2000, 'Bill Gates', 5);
-
-console.log(car2);
+let car1 = new Car('Honda','Civic',1989,'Vitali Haimov',19);
+let car2 = new Car('Fiat','Pinto',2000,'Avi Bujerano',10);
 </script>
 </body>
 </html>
