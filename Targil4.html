@@ -9,11 +9,21 @@
 <body>
 <script>
 const Car ={
-     Manufactorer : 'Mercedes',
+     Manufacturer : 'Mercedes',
      Model : 'G-wagon',
-     Year : '2021',
+     Year : 2021,
      Owner : 'Elon Musk',
-     Hand : '2'
+     Hand : 2,
+     print: function(){
+         let table= '<table><tr><th>Manufacturer</th><th>Model</th><th>Year</th><th>Owner</th><th>Hand</th></tr>';
+         table += '<tr><td>' + this.Manufacturer + '</td><td>' + this.Model + '</td><td>' + this.Year + '</td><td>'+ this.Owner + '</td><td>' + this.Hand + '</td></tr>';
+         table += '</table>';
+         document.write(table);
+     },
+     changeOwner: function(newOwner){
+         this.Owner = newOwner;
+         this.Hand += 1;
+     }
 };
 console.log(Car);
 
